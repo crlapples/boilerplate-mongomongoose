@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+let mongoose = require('mongoose');
 
 let Person;
 
@@ -54,7 +54,7 @@ const queryChain = (done) => {
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
-
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
 exports.PersonModel = Person;
