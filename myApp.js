@@ -3,7 +3,21 @@ let mongoose = require('mongoose');
 let uri = 'mongodb+srv://crlapples19:KM7HXIQ2FSTHqag4@cluster0.oj6ps.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+const personSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  }, 
+  age: {
+    type: String,
+  },
+  favoriteFoods: {
+    type: [String],
+  }
+});
+
 let Person;
+
+Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
